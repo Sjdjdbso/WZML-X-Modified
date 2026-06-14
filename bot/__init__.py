@@ -825,6 +825,21 @@ else:
     qb_client.app_set_preferences(qb_opt)
 
 log_info("Creating client from BOT_TOKEN")
+import asyncio
+import uvloop
+
+# 1. Atur kebijakan event loop agar menggunakan uvloop (sesuai stack trace aplikasi Anda)
+asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+
+# 2. Buat event loop baru secara eksplisit
+loop = asyncio.new_event_loop()
+
+# 3. Tetapkan event loop tersebut sebagai loop utama saat ini
+asyncio.set_event_loop(loop)
+
+# --- MULAI DARI SINI, ANDA BISA MENGINISIALISASI CLIENT ---
+# Contoh dari kode Anda:
+# bot = wztgClient('bot', TELEGRAM_API, TELEGRAM_HASH, bot_token=BOT_TOKEN, workers=1000, ...)
 bot = wztgClient('bot', TELEGRAM_API, TELEGRAM_HASH, bot_token=BOT_TOKEN, workers=1000,
                parse_mode=enums.ParseMode.HTML).start()
 bot_loop = bot.loop
