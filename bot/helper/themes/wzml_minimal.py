@@ -3,9 +3,9 @@ class WZMLStyle:
     # ----------------------
     # async def start(client, message) ---> __main__.py
     ST_BN1_NAME = '☀️ OWNER ☀️'
-    ST_BN1_URL = 'https://t.me/hrishikesh2861'
+    ST_BN1_URL = 'https://t.me/leonaardos'
     ST_BN2_NAME = '🚀 Updates 🚀'
-    ST_BN2_URL = 'https://t.me/JetMirror'
+    ST_BN2_URL = 'https://t.me/leonaardos'
     ST_MSG = '''This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram or to ddl servers. Repo used is WZML-X. And done some Modifications ❤️.
 <b>Type {help_command} to get a list of available commands</b>'''
     ST_BOTPM = '''Now, This bot will send all your files and links here. Start Using in <b><u>@JetMirror</u></b> ...'''
@@ -57,11 +57,11 @@ class WZMLStyle:
 ┠ <b>Mega:</b> {me}
 ┖ <b>Rclone:</b> {rcl}
 
-<a href="https://t.me/JetMirror">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑱𝒆𝒕-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
 
     '''
 
-    BOT_STATS = ''' <b><i><u>🚀Jet Bot Statistics</u></i></b>
+    BOT_STATS = ''' <b><i><u>🚀leo Bot Statistics</u></i></b>
 ┖ <b>Bot Uptime :</b> {bot_uptime}
 
 ┎ <b><i>🔴 RAM ( MEMORY ) :</i></b>
@@ -78,7 +78,7 @@ class WZMLStyle:
 ┃ <b>Total Disk Write :</b> {disk_write}
 ┖ <b>U :</b> {disk_u} | <b>F :</b> {disk_f} | <b>T :</b> {disk_t}
 
-<a href="https://t.me/JetMirror">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑱𝒆𝒕-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
     
     '''
     SYS_STATS = '''<b><i><u>🚀Jet System Statistics</u></i></b>
@@ -101,7 +101,7 @@ class WZMLStyle:
 ┠ <b>Total Core(s) :</b> {total_core}
 ┖ <b>Usable CPU(s) :</b> {cpu_use}
 
-<a href="https://t.me/JetMirror">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑱𝒆𝒕-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
     '''
     REPO_STATS = '''⌬ <b><i>WZML-X REPO STATISTICS :</i></b>
 ┠ <b>Bot Updated :</b> {last_commit}
@@ -111,7 +111,7 @@ class WZMLStyle:
 
 ⌬ <b>REMARKS :</b> <code>{remarks}</code>
 
-<a href="https://t.me/JetMirror">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑱𝒆𝒕-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
     '''
     BOT_LIMITS = '''<b><i><u>🚀Jet Bot Limitations</u></i></b>
 ┠ <b>Direct Limit :</b> {DL} GB
@@ -128,7 +128,7 @@ class WZMLStyle:
 ┠ <b>User Parallel Tasks :</b> {UT}
 ┖ <b>Bot Parallel Tasks :</b> {BT}
 
-<a href="https://t.me/JetMirror">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑱𝒆𝒕-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
     '''
     # ---------------------
 
