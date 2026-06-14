@@ -8,7 +8,7 @@ class WZMLStyle:
     ST_BN2_URL = 'https://t.me/leonaardos'
     ST_MSG = '''This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram or to ddl servers. Repo used is WZML-X. And done some Modifications ❤️.
 <b>Type {help_command} to get a list of available commands</b>'''
-    ST_BOTPM = '''Now, This bot will send all your files and links here. Start Using in <b><u>@JetMirror</u></b> ...'''
+    ST_BOTPM = '''Now, This bot will send all your files and links here. Start Using in <b><u>@YourBotUsername</u></b> ...'''
     ST_UNAUTH = '''You Are not authorized user!\n<b>Deploy your own WZML-X Mirror-Leech bot</b>'''
     OWN_TOKEN_GENERATE = '''<b>Temporary Token is not yours!</b>\n\n<i>Kindly generate your own.</i>'''
     USED_TOKEN = '''<b>Temporary Token already used!</b>\n\n<i>Kindly generate a new one.</i>'''
@@ -41,7 +41,7 @@ class WZMLStyle:
 
     # async def stats(client, message):
 
-    ENG_INFO = ''' <b><i><u>🚀Jet Bot Engine Info</u></i></b>
+    ENG_INFO = ''' <b><i><u>🚀 NOTHING SPESIAL Engine Info</u></i></b>
 
 ┎ <b> 🐍 Main Dependencies :
 ┠ <b>Python3:</b> {pyt}
@@ -57,11 +57,11 @@ class WZMLStyle:
 ┠ <b>Mega:</b> {me}
 ┖ <b>Rclone:</b> {rcl}
 
-<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑵𝑶𝑻𝑯𝑰𝑵𝑮 𝑺𝑷𝑬𝑺𝑰𝑨𝑳</a>
 
     '''
 
-    BOT_STATS = ''' <b><i><u>🚀leo Bot Statistics</u></i></b>
+    BOT_STATS = ''' <b><i><u>🚀 NOTHING SPESIAL Statistics</u></i></b>
 ┖ <b>Bot Uptime :</b> {bot_uptime}
 
 ┎ <b><i>🔴 RAM ( MEMORY ) :</i></b>
@@ -78,10 +78,10 @@ class WZMLStyle:
 ┃ <b>Total Disk Write :</b> {disk_write}
 ┖ <b>U :</b> {disk_u} | <b>F :</b> {disk_f} | <b>T :</b> {disk_t}
 
-<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑵𝑶𝑻𝑯𝑰𝑵𝑮 𝑺𝑷𝑬𝑺𝑰𝑨𝑳</a>
     
     '''
-    SYS_STATS = '''<b><i><u>🚀Jet System Statistics</u></i></b>
+    SYS_STATS = '''<b><i><u>🚀 System Statistics</u></i></b>
 ┠ <b>OS Uptime :</b> {os_uptime}
 ┠ <b>OS Version :</b> {os_version}
 ┖ <b>OS Arch :</b> {os_arch}
@@ -101,7 +101,7 @@ class WZMLStyle:
 ┠ <b>Total Core(s) :</b> {total_core}
 ┖ <b>Usable CPU(s) :</b> {cpu_use}
 
-<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑵𝑶𝑻𝑯𝑰𝑵𝑮 𝑺𝑷𝑬𝑺𝑰𝑨𝑳</a>
     '''
     REPO_STATS = '''⌬ <b><i>WZML-X REPO STATISTICS :</i></b>
 ┠ <b>Bot Updated :</b> {last_commit}
@@ -111,9 +111,9 @@ class WZMLStyle:
 
 ⌬ <b>REMARKS :</b> <code>{remarks}</code>
 
-<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑵𝑶𝑻𝑯𝑰𝑵𝑮 𝑺𝑷𝑬𝑺𝑰𝑨𝑳</a>
     '''
-    BOT_LIMITS = '''<b><i><u>🚀Jet Bot Limitations</u></i></b>
+    BOT_LIMITS = '''<b><i><u>🚀 NOTHING SPESIAL Limitations</u></i></b>
 ┠ <b>Direct Limit :</b> {DL} GB
 ┠ <b>Torrent Limit :</b> {TL} GB
 ┠ <b>GDrive Limit :</b> {GL} GB
@@ -128,7 +128,7 @@ class WZMLStyle:
 ┠ <b>User Parallel Tasks :</b> {UT}
 ┖ <b>Bot Parallel Tasks :</b> {BT}
 
-<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 leo♌-𝑴𝒊𝒓𝒓𝒐𝒓</a>
+<a href="https://t.me/leonaardos">𝑩𝒐𝒕 𝒃𝒚 🚀 𝑵𝑶𝑻𝑯𝑰𝑵𝑮 𝑺𝑷𝑬𝑺𝑰𝑨𝑳</a>
     '''
     # ---------------------
 
@@ -272,7 +272,7 @@ class WZMLStyle:
     # ---------------------
 
     # async def mirror_status(_, message): ----> status.py
-    NO_ACTIVE_DL = '''<b>ᴜɴɪɴsᴛᴀʟʟ ᴛᴇʟᴇɢʀᴀᴍ ᴀɴᴅ ᴇɴᴊᴏʏ ʏᴏᴜʀ ʟɪғᴇ!!</b>\n\nɴᴏ ᴅᴏᴡɴʟᴏᴀᴅs ᴀʀᴇ ᴄᴜʀʀᴇɴᴛʟʏ ɪɴ ᴘʀᴏɢʀᴇss.
+    NO_ACTIVE_DL = '''<b>Tidak ada proses yang sedang berjalan.</b>\n\nKirimkan tautan untuk memulai proses Mirror atau Leech.
     
 ⌬ <b><i>Bot Stats</i></b>
 ┠ <b>CPU:</b> {cpu}% | <b>F:</b> {free} [{free_p}%]
