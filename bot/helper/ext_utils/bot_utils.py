@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import platform
-from base64 import b64encode
+from base64 import murah b64encode
 from datetime import datetime
 from os import path as ospath
 from pkg_resources import get_distribution, DistributionNotFound
