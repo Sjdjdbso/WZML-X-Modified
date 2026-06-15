@@ -13,6 +13,36 @@ from bot.helper.telegram_helper.message_utils import sendMessage, deleteMessage,
 from bot.helper.themes import BotTheme
 
 
+async def __handle_403_error(api, gid, download):
+    """Tangani error 403 dengan retry otomatis"""
+    LOGGER.info(f"Handling 403 error for GID: {gid}, attempting recovery...")
+    
+    try:
+        # Coba remove download yang gagal
+        await sync_to_async(api.remove, [download], force=True, files=True)
+        await sleep(2)
+        
+        # Coba re-add dengan custom headers
+        custom_headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Referer': 'https://www.google.com/'
+        }
+        
+        options = {
+            'header': [f'{k}: {v}' for k, v in custom_headers.items()],
+            'connect-timeout': '60',
+            'timeout': '60',
+        }
+        
+        LOGGER.info(f"Retrying download with custom headers...")
+        await sync_to_async(api.add_uris, [[download.name]], options)
+        return True
+        
+    except Exception as e:
+        LOGGER.error(f"Failed to handle 403 error: {e}")
+        return False
+
+
 @new_thread
 async def __onDownloadStarted(api, gid):
     download = await sync_to_async(api.get_download, gid)
@@ -197,6 +227,9 @@ async def __onDownloadStopped(api, gid):
 async def __onDownloadError(api, gid):
     LOGGER.info(f"onDownloadError: {gid}")
     error = "None"
+    retry_count = 0
+    max_retries = 2
+    
     try:
         download = await sync_to_async(api.get_download, gid)
         if download.options.follow_torrent == 'false':
@@ -204,9 +237,27 @@ async def __onDownloadError(api, gid):
         error = download.error_message
         LOGGER.info(f"Download Error: {error}")
         
-        # Handle specific error codes
+        # Handle 403 error dengan retry otomatis
         if "403" in str(error):
-            error = "❌ Server Access Denied (403)\n\nServernya tidak mengizinkan download. Coba link lain atau gunakan VPN."
+            LOGGER.warning(f"403 Error detected for {gid}, attempting recovery...")
+            if dl := await getDownloadByGid(gid):
+                listener = dl.listener()
+                retry_msg = "⚠️ Error 403 terdeteksi!\n\n🔄 Sedang mencoba metode alternatif...\n(Ini mungkin memerlukan beberapa saat)"
+                status_msg = await sendMessage(listener.message, retry_msg)
+                
+                # Coba recovery
+                recovery_success = await __handle_403_error(api, gid, download)
+                
+                if recovery_success:
+                    await deleteMessage(status_msg)
+                    info_msg = "✅ Berhasil! Download dicoba ulang dengan metode baru.\n\nMonitor status download Anda."
+                    await sendMessage(listener.message, info_msg)
+                    return
+                else:
+                    await deleteMessage(status_msg)
+                    error = "❌ Server Access Denied (403)\n\n🔧 Solusi:\n• Coba link lain\n• Gunakan VPN jika ada geo-blocking\n• Tunggu beberapa jam lalu coba lagi"
+        
+        # Handle error codes lainnya
         elif "404" in str(error):
             error = "❌ File Not Found (404)\n\nLink sudah tidak valid atau file sudah dihapus."
         elif "timeout" in str(error).lower():
@@ -216,8 +267,10 @@ async def __onDownloadError(api, gid):
         elif "unauthorized" in str(error).lower() or "401" in str(error):
             error = "🔐 Unauthorized (401)\n\nLink memerlukan autentikasi atau token."
         
-    except Exception:
+    except Exception as e:
+        LOGGER.error(f"Error in __onDownloadError: {e}")
         pass
+    
     if dl := await getDownloadByGid(gid):
         listener = dl.listener()
         await listener.onDownloadError(error)
