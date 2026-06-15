@@ -203,6 +203,19 @@ async def __onDownloadError(api, gid):
             return
         error = download.error_message
         LOGGER.info(f"Download Error: {error}")
+        
+        # Handle specific error codes
+        if "403" in str(error):
+            error = "❌ Server Access Denied (403)\n\nServernya tidak mengizinkan download. Coba link lain atau gunakan VPN."
+        elif "404" in str(error):
+            error = "❌ File Not Found (404)\n\nLink sudah tidak valid atau file sudah dihapus."
+        elif "timeout" in str(error).lower():
+            error = "⏱️ Download Timeout\n\nKoneksi lambat atau server tidak merespons. Coba lagi."
+        elif "connection" in str(error).lower():
+            error = "🔌 Connection Error\n\nPastikan koneksi internet stabil."
+        elif "unauthorized" in str(error).lower() or "401" in str(error):
+            error = "🔐 Unauthorized (401)\n\nLink memerlukan autentikasi atau token."
+        
     except Exception:
         pass
     if dl := await getDownloadByGid(gid):
